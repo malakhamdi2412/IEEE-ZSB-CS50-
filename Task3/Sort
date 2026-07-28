@@ -1,0 +1,9 @@
+sort1 is: bubble sort
+It runs very quickly on already sorted input, but takes significantly longer on random and reversed inputs.
+sort2 is: merge sort
+It is the fastest algorithm overall and completes in a fraction of a second for all input types.
+sort3 is: selection sort
+ It takes roughly the same amount of time across all inputs (sorted, random, and reversed) because it always iterates through the entire list.
+
+
+
