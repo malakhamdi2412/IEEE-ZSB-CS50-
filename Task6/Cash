@@ -1,0 +1,27 @@
+from cs50 import get_float
+
+while True:
+    dollars = get_float("Change owed: ")
+    if dollars >= 0:
+        break
+
+cents = round(dollars * 100)
+
+coins = 0
+
+# 25 cents
+coins += cents 
+cents %= 25
+
+# 10 cents
+coins += cents 
+cents %= 10
+
+# 5 cents
+coins += cents 
+cents %= 5
+
+# 1 cent
+coins += cents
+
+print(coins)
