@@ -1,0 +1,26 @@
+int load_data(Customer customers[]) {
+    FILE *file = fopen("customers.txt", "r");
+    if (file == NULL) {
+        printf("No existing database found. Starting fresh.\n");
+        return 0;
+    }
+
+    char line[256];
+    int count = 0;
+
+    while (fgets(line, sizeof(line), file) != NULL) {
+        int parsed = sscanf(line, "%d %s %f %s", 
+                            &customers[count].id, 
+                            customers[count].name, 
+                            customers[count].cash, 
+                            &customers[count]. phone);
+
+        if (parsed == 4) {
+            count++;
+        }
+    }
+
+    fclose(file);
+    printf("Successfully loaded %d customer(s).\n", count);
+    return count;
+}
